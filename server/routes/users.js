@@ -49,6 +49,19 @@ router.put('/:id/ships', function(req, res, next) {
     });
 });
 
+//Edit a user name
+router.put('/:id', function(req, res, next) {
+    var update = { name:req.body.name};
+    var id = req.params.id;
+    User.findByIdAndUpdate(id, update)
+    .then(function(result) {
+        res.json(result);
+    })
+    .catch(function(err) {
+        res.send(err);
+    });
+});
+
 //list a user's ships
 router.get('/:id/ships', function(req, res, next) {
     User.findById(req.params.id)

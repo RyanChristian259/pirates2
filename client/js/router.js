@@ -11,6 +11,11 @@ app.config(function ($routeProvider) {
      controller:'shipsController',
    })
 
+     .when('/edit', {
+     templateUrl: 'pages/editShip.html',
+     controller:'shipsController',
+   })
+
    .otherwise({redirectTo: '/home'});
 });
 

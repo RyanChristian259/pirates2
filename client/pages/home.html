@@ -15,16 +15,33 @@
 
 </br></br>
 
- <h4> &nbsp; Get Pirates</br></h4>
+ <h4> &nbsp; Get Pirates</br></h4><p>Click on a pirate name to edit</p>
   <button ng-click='getUser()' type="submit" class="btn btn-default">Get them now!</button>
 
 <div>
   <ul ng-repeat='user in userData'>
     <a href='#/user' ng-click='getSingleUserId(user)'><li>{{user.name}}</li></a>
+
+
     <ul ng-repeat='ship in user.ships'>
-    <li>Ship Name: {{ship.name}}</li>
+    <li>Ship Name: {{ship.name}} <button type="submit" class="btn btn-primary btn-md" ng-click="deleteShip(ship)">Delete Ship</button>
+
+    <a href='#/edit'><button type="submit" class="btn btn-primary btn-md" ng-click="getShipId(ship)">Edit Ship</button></a></li>
       <ul>
       <li>Missions: {{ship.missions}}</li>
     </ul>
   </ul>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
