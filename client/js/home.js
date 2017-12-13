@@ -1,10 +1,10 @@
 var app = angular.module('myApp', ['ngRoute', 'ngResource']);
 
-app.controller('shipsController',['$scope', '$http', '$location', '$routeParams', 'getIdService', '$route', function($scope, $http, $location, $routeParams, getIdService, $route) {
-
+app.controller('shipsController',['$scope', '$http', '$location', '$routeParams', 'getIdService', '$route', 
+      function($scope, $http, $location, $routeParams, getIdService, $route) {
 
   $scope.currentUrl = $route.current.templateUrl;
-  console.log($scope.currentUrl);
+  console.log('Current URL: ', $scope.currentUrl);
 
   $scope.addUser = function(){
     var payload = {

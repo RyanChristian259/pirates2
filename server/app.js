@@ -4,7 +4,6 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var swig = require('swig');
 var mongoose = require('mongoose');
 var favicon = require('serve-favicon');
 
@@ -23,8 +22,7 @@ var app = express();
 
 
 // *** view engine *** //
-var swig = new swig.Swig();
-app.engine('html', swig.renderFile);
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 
